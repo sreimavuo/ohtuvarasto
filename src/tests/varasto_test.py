@@ -79,7 +79,10 @@ class TestVarasto(unittest.TestCase):
     # Yritetään alustaa varasto negatiivisella saldolla
     def test_onko_saldo_nolla(self):
         varasto3 = Varasto(10, -10)
-        self.assertAlmostEqual(varasto3.saldo, 0)
+
+        #Rikotaan testi tarkoituksella että nähdään miten GHA reagoi
+        #self.assertAlmostEqual(varasto3.saldo, 0)
+        self.assertAlmostEqual(varasto3.saldo, 1)
 
     def test_print_string(self):
         self.assertEqual(str(self.varasto), "saldo = 0, vielä tilaa 10")
